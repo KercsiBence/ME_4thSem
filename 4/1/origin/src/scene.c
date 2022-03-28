@@ -32,4 +32,21 @@ void draw_origin()
     glVertex3f(0, 0, 1);
 
     glEnd();
+
+    glBegin(GL_LINES);
+    double i;
+    for (i = 0; i <= 1; i+=0.2)
+    {
+        glVertex2f(i, 0);
+        glVertex2f(i, 1);
+    }
+    for (i = 0; i <= 1; i+=0.2)
+    {
+        glVertex2f(0, i);
+        glVertex2f(1, i);
+    }
+    
+    glEnd();
+    
 }
+
