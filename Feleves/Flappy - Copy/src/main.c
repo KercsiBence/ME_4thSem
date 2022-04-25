@@ -8,8 +8,6 @@
 int main(int argc, char* argv[])
 {
     App app;
-	argc=argc;
-	argv=argv;
     init_app(&app, app_width, app_height);
     while (app.is_running) {
         handle_app_events(&app);

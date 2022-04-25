@@ -22,6 +22,9 @@ typedef struct App
     double uptime;
     Camera camera;
     Scene scene;
+	GLuint hud;
+	GLuint help_panel;
+	bool see_help_panel;
 } App;
 
 /**

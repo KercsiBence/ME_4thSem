@@ -36,7 +36,7 @@ void set_view(const Camera* camera);
 /**
  * Set the horizontal and vertical rotation of the view angle.
  */
-//void rotate_camera(Camera* camera, double horizontal, double vertical);
+void rotate_camera(Camera* camera, double horizontal, double vertical);
 
 /**
  * Set the speed of forward and backward motion.

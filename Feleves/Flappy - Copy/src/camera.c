@@ -46,9 +46,9 @@ void set_view(const Camera* camera)
     glTranslatef(-camera->position.x, -camera->position.y, -camera->position.z);
 }
 
-/*void rotate_camera(Camera* camera, double horizontal, double vertical)
+void rotate_camera(Camera* camera, double horizontal, double vertical)
 {
-}*/
+}
 
 void set_camera_speed(Camera* camera, double speed)
 {

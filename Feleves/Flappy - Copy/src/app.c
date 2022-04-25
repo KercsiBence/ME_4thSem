@@ -43,6 +43,9 @@ void init_app(App* app, int width, int height)
     init_scene(&(app->scene));
 
     app->is_running = true;
+	app->hud = load_texture("assets/textures/hud.png");
+	app->help_panel = load_texture("assets/textures/helppanel.jpg");
+	app->see_help_panel=false;
 	app->camera.already_play=false;
 }
 
@@ -120,11 +123,11 @@ void handle_app_events(App* app)
 				}
                 break;
 			case SDL_SCANCODE_F1:
-				if(app->scene.see_help_panel==true){
-					app->scene.see_help_panel=false;
+				if(app->see_help_panel==true){
+					app->see_help_panel=false;
 					break;
 				}
-				app->scene.see_help_panel=true;
+				app->see_help_panel=true;
 				break;
 			case SDL_SCANCODE_SPACE:
 				if(app->camera.already_play==false){
@@ -192,10 +195,10 @@ void render_app(App* app)
     update_player(&(app->scene),&(app->camera));
 	glPopMatrix();
 	if(app->camera.already_play==false){
-		render_hud(app->scene.hud,0.0,app_height-50,app_width,app_height-50,0.0,app_height,app_width,app_height);
+		render_hud(app->hud,0.0,app_height-50,app_width,app_height-50,0.0,app_height,app_width,app_height);
 	}
-	if(app->scene.see_help_panel==true){
-		render_hud(app->scene.help_panel,0.0,0.0,app_width,0.0,0.0,app_height-50,app_width,app_height-50);
+	if(app->see_help_panel==true){
+		render_hud(app->help_panel,0.0,0.0,app_width,0.0,0.0,app_height-50,app_width,app_height-50);
 	}
 	
     if (app->camera.is_preview_visible) {

@@ -1,6 +1,5 @@
 #include "scene.h"
-#include <stdio.h>
-#include <stdlib.h>
+
 #include <obj/load.h>
 #include <obj/draw.h>
 
@@ -21,9 +20,6 @@ void init_scene(Scene* scene)
     scene->map_material.specular.green = 0.0;
     scene->map_material.specular.blue = 0.0;
     scene->map_material.shininess = 0.0;
-	scene->hud = load_texture("assets/textures/hud.png");
-	scene->help_panel = load_texture("assets/textures/helppanel.jpg");
-	scene->see_help_panel=false;
 	reset_scene(scene);
 }
 
@@ -75,10 +71,10 @@ void set_material(const Material* material)
     glMaterialfv(GL_FRONT_AND_BACK, GL_SHININESS, &(material->shininess));
 }
 
-/*void update_scene(Scene* scene,Camera* camera)
+void update_scene(Scene* scene,Camera* camera)
 {
 	
-}*/
+}
 
 void render_scene(Scene* scene)
 {

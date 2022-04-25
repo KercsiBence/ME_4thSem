@@ -17,9 +17,6 @@ typedef struct Scene
 	Model tubemodel;
 	vec3 tubepositions[TUBENUMBER];
 	float light;
-	GLuint hud;
-	GLuint help_panel;
-	bool see_help_panel;
 }Scene;
 
 /**
@@ -46,7 +43,7 @@ void set_material(const Material* material);
 /**
  * Update the scene.
  */
-//void update_scene(Scene* scene, Camera* camera);
+void update_scene(Scene* scene, Camera* camera);
 
 /**
  * Render the scene objects.
